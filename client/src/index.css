@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(45, 50%, 99%);
+  --foreground: hsl(39, 100%, 8%);
+  --card: hsl(40, 30%, 97%);
+  --card-foreground: hsl(39, 100%, 8%);
+  --popover: hsl(45, 50%, 99%);
+  --popover-foreground: hsl(39, 100%, 8%);
+  --primary: hsl(43, 88%, 37%);
+  --primary-foreground: hsl(45, 50%, 99%);
+  --secondary: hsl(39, 100%, 8%);
+  --secondary-foreground: hsl(45, 50%, 99%);
+  --muted: hsl(42, 10%, 90%);
+  --muted-foreground: hsl(39, 100%, 8%);
+  --accent: hsl(40, 33%, 93%);
+  --accent-foreground: hsl(43, 88%, 37%);
+  --destructive: hsl(0, 85%, 60%);
+  --destructive-foreground: hsl(45, 50%, 99%);
+  --border: hsl(40, 25%, 91%);
+  --input: hsl(40, 20%, 97%);
+  --ring: hsl(43, 88%, 37%);
+  --chart-1: hsl(43, 88%, 37%);
+  --chart-2: hsl(160, 100%, 36%);
+  --chart-3: hsl(42, 93%, 56%);
+  --chart-4: hsl(147, 78%, 42%);
+  --chart-5: hsl(341, 75%, 51%);
+  --sidebar: hsl(40, 30%, 97%);
+  --sidebar-foreground: hsl(39, 100%, 8%);
+  --sidebar-primary: hsl(43, 88%, 37%);
+  --sidebar-primary-foreground: hsl(45, 50%, 99%);
+  --sidebar-accent: hsl(40, 33%, 93%);
+  --sidebar-accent-foreground: hsl(43, 88%, 37%);
+  --sidebar-border: hsl(40, 25%, 91%);
+  --sidebar-ring: hsl(43, 88%, 37%);
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: 1.0rem;
+  
+  /* Golden cream color palette */
+  --cream-50: hsl(45, 50%, 99%);
+  --cream-100: hsl(44, 43%, 97%);
+  --cream-200: hsl(42, 27%, 94%);
+  --cream-300: hsl(41, 21%, 83%);
+  --cream-400: hsl(40, 15%, 66%);
+  --cream-500: hsl(43, 88%, 37%);
+  --cream-600: hsl(42, 100%, 30%);
+  --cream-700: hsl(41, 100%, 23%);
+  --cream-800: hsl(40, 100%, 17%);
+  --cream-900: hsl(39, 100%, 12%);
+  
+  /* Animation keyframes */
+  --animation-fade-in: fadeIn 0.8s ease-out;
+  --animation-slide-up: slideUp 0.6s ease-out;
+  --animation-pulse-golden: pulseGolden 2s infinite;
+}
+
+.dark {
+  --background: hsl(39, 100%, 4%);
+  --foreground: hsl(45, 30%, 92%);
+  --card: hsl(39, 20%, 10%);
+  --card-foreground: hsl(45, 20%, 85%);
+  --popover: hsl(39, 100%, 4%);
+  --popover-foreground: hsl(45, 30%, 92%);
+  --primary: hsl(43, 88%, 45%);
+  --primary-foreground: hsl(39, 100%, 4%);
+  --secondary: hsl(45, 15%, 95%);
+  --secondary-foreground: hsl(39, 100%, 8%);
+  --muted: hsl(39, 100%, 9%);
+  --muted-foreground: hsl(40, 3%, 46%);
+  --accent: hsl(41, 70%, 8%);
+  --accent-foreground: hsl(43, 88%, 45%);
+  --destructive: hsl(0, 85%, 60%);
+  --destructive-foreground: hsl(45, 50%, 99%);
+  --border: hsl(40, 5%, 15%);
+  --input: hsl(41, 28%, 18%);
+  --ring: hsl(43, 88%, 37%);
+  --sidebar: hsl(39, 20%, 10%);
+  --sidebar-foreground: hsl(45, 20%, 85%);
+  --sidebar-primary: hsl(43, 88%, 37%);
+  --sidebar-primary-foreground: hsl(45, 50%, 99%);
+  --sidebar-accent: hsl(41, 70%, 8%);
+  --sidebar-accent-foreground: hsl(43, 88%, 45%);
+  --sidebar-border: hsl(41, 16%, 26%);
+  --sidebar-ring: hsl(43, 88%, 37%);
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(40px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes pulseGolden {
+  0%, 100% { 
+    box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.4); 
+  }
+  50% { 
+    box-shadow: 0 0 0 10px rgba(184, 134, 11, 0); 
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  /* Custom utility classes */
+  .gradient-bg {
+    background: linear-gradient(135deg, var(--cream-50) 0%, var(--cream-100) 50%, var(--cream-200) 100%);
+  }
+
+  .voice-active {
+    animation: pulseGolden 1.5s infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  .animate-pulse-golden {
+    animation: pulseGolden 2s infinite;
+  }
+}
+
+/* Custom cream color utilities */
+@layer utilities {
+  .text-cream-50 { color: var(--cream-50); }
+  .text-cream-100 { color: var(--cream-100); }
+  .text-cream-200 { color: var(--cream-200); }
+  .text-cream-300 { color: var(--cream-300); }
+  .text-cream-400 { color: var(--cream-400); }
+  .text-cream-500 { color: var(--cream-500); }
+  .text-cream-600 { color: var(--cream-600); }
+  .text-cream-700 { color: var(--cream-700); }
+  .text-cream-800 { color: var(--cream-800); }
+  .text-cream-900 { color: var(--cream-900); }
+
+  .bg-cream-50 { background-color: var(--cream-50); }
+  .bg-cream-100 { background-color: var(--cream-100); }
+  .bg-cream-200 { background-color: var(--cream-200); }
+  .bg-cream-300 { background-color: var(--cream-300); }
+  .bg-cream-400 { background-color: var(--cream-400); }
+  .bg-cream-500 { background-color: var(--cream-500); }
+  .bg-cream-600 { background-color: var(--cream-600); }
+  .bg-cream-700 { background-color: var(--cream-700); }
+  .bg-cream-800 { background-color: var(--cream-800); }
+  .bg-cream-900 { background-color: var(--cream-900); }
+
+  .border-cream-50 { border-color: var(--cream-50); }
+  .border-cream-100 { border-color: var(--cream-100); }
+  .border-cream-200 { border-color: var(--cream-200); }
+  .border-cream-300 { border-color: var(--cream-300); }
+  .border-cream-400 { border-color: var(--cream-400); }
+  .border-cream-500 { border-color: var(--cream-500); }
+  .border-cream-600 { border-color: var(--cream-600); }
+  .border-cream-700 { border-color: var(--cream-700); }
+  .border-cream-800 { border-color: var(--cream-800); }
+  .border-cream-900 { border-color: var(--cream-900); }
+
+  .hover\:bg-cream-50:hover { background-color: var(--cream-50); }
+  .hover\:bg-cream-100:hover { background-color: var(--cream-100); }
+  .hover\:bg-cream-200:hover { background-color: var(--cream-200); }
+  .hover\:bg-cream-300:hover { background-color: var(--cream-300); }
+  .hover\:bg-cream-400:hover { background-color: var(--cream-400); }
+  .hover\:bg-cream-500:hover { background-color: var(--cream-500); }
+  .hover\:bg-cream-600:hover { background-color: var(--cream-600); }
+  .hover\:bg-cream-700:hover { background-color: var(--cream-700); }
+  .hover\:bg-cream-800:hover { background-color: var(--cream-800); }
+  .hover\:bg-cream-900:hover { background-color: var(--cream-900); }
+
+  .hover\:border-cream-300:hover { border-color: var(--cream-300); }
+  .hover\:border-cream-400:hover { border-color: var(--cream-400); }
+  .hover\:border-cream-500:hover { border-color: var(--cream-500); }
+  
+  .focus\:border-cream-500:focus { border-color: var(--cream-500); }
+}
