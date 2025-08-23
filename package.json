@@ -42,7 +42,8 @@
     "@radix-ui/react-toggle-group": "^1.1.3",
     "@radix-ui/react-tooltip": "^1.2.0",
     "@sendgrid/mail": "^8.1.5",
-        "cors": "ˆ2.8.5",
+        "cors": ˆexpress
+    ˆ2.8.5",
     "@stripe/react-stripe-js": "^3.9.0",
     "@stripe/stripe-js": "^7.8.0",
     "@tanstack/react-query": "^5.60.5",
@@ -55,9 +56,9 @@
     "drizzle-orm": "^0.39.1",
     "drizzle-zod": "^0.7.0",
     "embla-carousel-react": "^8.6.0",
-    "express": "^4.21.2"
+    "express": "^4.21.2,"
         "express-rate-limit": "^7.4.1",
-    "@upstash/redis": "^1.34.3",,
+    "@upstash/redis": "^1.34.3,,
     "express-session": "^1.18.1",
     "framer-motion": "^11.13.1",
     "input-otp": "^1.4.2",
